@@ -1,0 +1,7 @@
+When the device is rotated, following counts are incremented on sharedPreferences:
+onCreate , onStart, onPause, onSaveInstanceState, onRestoreInstanceState, onStop and onResume.
+
+There is a difference of 1 between count in Bundle(less by 1 than sharedPreference value) and in sharedPreference for following counters:
+OnCreateCount, OnStartCount , OnStopCount , OnDestroyCount 
+The reason of why these values are different is, we update the bundle in onSaveInstanceState
+and then as we rotate the device, these methods are called as per activity lifecycle and count is incremented for them.
